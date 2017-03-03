@@ -7,7 +7,7 @@
         "type": "git",
         "url": "https://github.com/cld-santos/semantic-ui-range"
     },
-    "dependencies": {
+    "devDependencies": {
         "semantic-ui": ">=2.2.0"
     }
 }
