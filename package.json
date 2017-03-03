@@ -8,6 +8,6 @@
         "url": "https://github.com/cld-santos/semantic-ui-range"
     },
     "dependencies": {
-        "semantic-ui": ">=2.2.0",
-    },
+        "semantic-ui": ">=2.2.0"
+    }
 }
