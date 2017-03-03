@@ -1,13 +1,13 @@
 {
-    "name": "semantic-ui-range",
-    "version": "1.0.0",
-    "author": "Tyler Yasaka",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/cld-santos/semantic-ui-range"
-    },
-    "devDependencies": {
-        "semantic-ui": ">=2.2.0"
-    }
+  "name": "semantic-ui-range",
+  "version": "1.0.1",
+  "author": "Tyler Yasaka",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cld-santos/semantic-ui-range"
+  },
+  "devDependencies": {
+    "semantic-ui": ">=2.2.0"
+  }
 }
