@@ -18,6 +18,12 @@ Alternatively, you can install using Bower:
 bower install tyleryasaka/semantic-ui-range --save
 ```
 
+Or, you can install using npm:
+```
+npm install semantic-ui-range 
+```
+
+
 ###Step 2
 
 Add the range slider html.
