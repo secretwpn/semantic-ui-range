@@ -137,11 +137,11 @@ $.fn.range = function(parameters) {
 				},
 
 				setMinValue: function(newMinValue) {
-					settings.min = newMinValue
+					settings.min = parseInt(newMinValue)
 				},
 
 				setMaxValue: function(newMaxValue) {
-					settings.max = newMaxValue
+					settings.max = parseInt(newMaxValue)
 				},
 
 				setPosition: function(value) {
