@@ -2,10 +2,6 @@
   "name": "semantic-ui-range-minmax",
   "version": "1.0.2",
   "author": "Simon O (https://github.com/secretwpn/semantic-ui-range)",
-  "contributors": [
-    "Tyler Yasaka (https://github.com/tyleryasaka/semantic-ui-range)",
-    "Claudio Santos (https://github.com/cld-santos/semantic-ui-range)"
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
