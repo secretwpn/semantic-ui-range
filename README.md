@@ -76,6 +76,13 @@ You may also set the slider value with jQuery using the 'setValue' query like so
 
 Note that this will only work on a slider that has already been instantiated.
 
+## *Setting* min and max values programmatically
+
+You can set min and max values without resetting the whole slider (which could make it briefly blink on the page)
+
+    $('#range').range('set min', 0);
+    $('#range').range('set max', 100);
+
 ## Preventing infinite get/set loops
 
 If you're running code in your `onChange` callback that calls the `set value` method, you will encounter an infinite loop. You can prevent this by checking the `triggeredByUser` property.

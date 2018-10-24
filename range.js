@@ -15,12 +15,12 @@ $.fn.range = function(parameters) {
 		offset         = 10,
 		
 		query          = arguments[0],
-    methodInvoked  = (typeof query == 'string'),
-    queryArguments = [].slice.call(arguments, 1)
+		methodInvoked  = (typeof query == 'string'),
+		queryArguments = [].slice.call(arguments, 1)
 	;
 	
-  $allModules
-    .each(function() {
+	$allModules
+		.each(function() {
 			
 			var
 				settings          = ( $.isPlainObject(parameters) )
@@ -136,6 +136,14 @@ $.fn.range = function(parameters) {
 					}
 				},
 
+				setMinValue: function(newMinValue) {
+					settings.min = newMinValue
+				},
+
+				setMaxValue: function(newMaxValue) {
+					settings.max = newMaxValue
+				},
+
 				setPosition: function(value) {
 					$(thumb).css({left: String(value) + 'px'});
 					$(trackLeft).css({width: String(value + offset) + 'px'});
@@ -197,6 +205,24 @@ $.fn.range = function(parameters) {
 					module.setPosition(position);
 					module.setValue(val, triggeredByUser);
 				},
+
+				setMinValuePosition: function(minVal) {
+					module.setMinValue(minVal);
+					if(settings.input) {
+						var val = $(settings.input).val();
+						var position = module.determinePosition(val);
+						module.setPosition(position);
+					}
+				},
+
+				setMaxValuePosition: function(maxVal) {
+					module.setMaxValue(maxVal);
+					if(settings.input) {
+						var val = $(settings.input).val();
+						var position = module.determinePosition(val);
+						module.setPosition(position);
+					}
+				},
 				
 				invoke: function(query) {
 					switch(query) {
@@ -205,32 +231,42 @@ $.fn.range = function(parameters) {
 								instance.setValuePosition(queryArguments[0], false);
 							}
 							break;
+							case 'set min':
+							if(queryArguments.length > 0) {
+								instance.setMinValuePosition(queryArguments[0]);
+							}
+							break;
+							case 'set max':
+							if(queryArguments.length > 0) {
+								instance.setMaxValuePosition(queryArguments[0]);
+							}
+							break;
 					}
 				},
 			
 			};
 			
-      if(methodInvoked) {
-        if(instance === undefined) {
-          module.initialize();
-        }
-        module.invoke(query);
-      }
-      else {
-        module.initialize();
-      }
+			if(methodInvoked) {
+				if(instance === undefined) {
+					module.initialize();
+				}
+				module.invoke(query);
+			}
+			else {
+				module.initialize();
+			}
 			
-    })
-  ;
-  
-  return this;
+		})
+	;
+	
+	return this;
 
 };
 
 $.fn.range.settings = {
 
-  name         : 'Range',
-  namespace    : 'range',
+	name         : 'Range',
+	namespace    : 'range',
 
 	min          : 0,
 	max          : false,
